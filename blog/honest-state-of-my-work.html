@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="An honest look at what's shipped, what's in progress, and why I'd rather show real progress than polished fiction." />
+  <title>The Honest State of My Work — Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh — Build Log" href="/feed.xml" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <article class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">2026 · Build Log · 5 min read</div>
+        <h1>The Honest State of My Work</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">What's shipped, what's cooking, and why I'd rather show real progress than polished fiction.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Build in Public</span><span class="tag">Career</span><span class="tag">Engineering</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Why I'm writing this</h2>
+        <p>Developers are trained to show finished work. The screenshots are polished, the numbers are rounded up, the dead ends are hidden. It looks impressive — and it teaches nothing.</p>
+        <p>So here's the version I'd want to read from someone else: <strong>an honest state of my work.</strong> What's done, what's half-built, and what I'm still figuring out. No rounding up.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>✅ Complete and in use</h2>
+
+        <p><strong>LeadClear Journal — Client work, live</strong></p>
+        <p>A landing page I built for Anne Abiodun's 30-day leadership journal. It's wired into her Selar checkout for payments and Systeme.io for the email funnel. She's using it right now with real customers. This is the only project on this list where someone else's business depends on my code — and that's a different kind of pressure.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: HTML/CSS/JS · Selar · Systeme.io · Vercel</p>
+
+        <p style="margin-top: 16px;"><strong>My portfolio — Live</strong></p>
+        <p>Rebuilt from a single long page into a full ecosystem: 6 case studies, a build log (you're reading it), a working contact funnel, SEO, analytics, dark mode, and a design system I can extend in minutes. I broke it twice during the rebuild. Documented both.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: Static HTML/CSS/JS · Vercel · Formspree · Vercel Analytics</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>🚧 In progress — 60 to 80%</h2>
+
+        <p><strong>DevCraft Career — ~65%</strong></p>
+        <p>A CV builder with an AI job matcher. Users build a professional CV in minutes; the system scans private, government, and freelance listings and sends them the direct apply link. The CV builder works. The job scanner works. What's left: better matching, application tracking, and enough polish that I'd put it in front of a stranger.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: React · Python · Job APIs · Vercel</p>
+
+        <p style="margin-top: 16px;"><strong>NativityGuard — ~60%</strong></p>
+        <p>A civic-tech platform bridging rural Nigerian communities and local security units. Full case lifecycle (12 states — signal → intake → dispatch → investigation → audit), a GIS crime-index map, SOS alerts, WebSocket live updates, JWT auth across 4 user roles.</p>
+        <p>The API and system of record are Go + PostgreSQL. The frontend is React 19. The intelligence tier (Python + ML for anomaly detection) hasn't started. It runs end-to-end in dev. It's not ready for a pilot unit yet.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: Go 1.21 · Gin · React 19 · PostgreSQL · PostGIS · Redis · Docker</p>
+
+        <p style="margin-top: 16px;"><strong>Plant Assistant — ~70%</strong></p>
+        <p>An AI tool for small-scale farmers. Snap a photo of a plant, get identification, care advice, and season-specific pesticide recommendations based on geolocation. Offline-first PWA. The model works on the target species. What's left: field testing with actual farmers, offline caching edge cases, and a mobile interface that doesn't drain battery.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: Python · scikit-learn · Streamlit prototype · PWA target</p>
+
+        <p style="margin-top: 16px;"><strong>My Creative Partner — collaborative, ~50%</strong></p>
+        <p>A 3D philosophical game where text and voice prompts generate visualizations of user ideas. It's a team effort — I'm not the only owner. Real-time generation pipeline is the hardest part we're still working through.</p>
+        <p style="font-size: 0.9rem; font-family: var(--font-mono); color: var(--text-muted);">Stack: 3D · AI · Voice Interface · Text Prompting</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Why I'm posting this honestly</h2>
+        <p>Because building quietly doesn't help anyone.</p>
+        <p>Future clients can't hire what they can't see. Recruiters can't evaluate a developer who hides their process. And other builders learn more from watching progress than from staring at finished screenshots.</p>
+        <p>There's a version of this where I wait six months, polish everything to 95%, and then post a triumphant launch thread. That version is boring, and it doesn't reflect how software actually gets built.</p>
+        <p><strong>Shipping isn't an event. It's a habit.</strong></p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What's next for each project</h2>
+        <ul class="exp-details">
+          <li><strong>LeadClear:</strong> Add A/B testing on the hero headline. Set up a lightweight analytics dashboard for Anne.</li>
+          <li><strong>Portfolio:</strong> Keep writing. One build-log post per week, every week.</li>
+          <li><strong>DevCraft:</strong> Ship the application tracker. Reach 80% by the end of the month. Then open a private beta.</li>
+          <li><strong>NativityGuard:</strong> Start the Python intelligence tier. Get one pilot unit using it (even for testing).</li>
+          <li><strong>Plant Assistant:</strong> Take it into the field. Ten farmers. Real feedback.</li>
+          <li><strong>My Creative Partner:</strong> Ship the first playable scene.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What I'm open to</h2>
+        <p>If you're reading this and thinking we should work together — I'm open to:</p>
+        <ul class="exp-details">
+          <li><strong>Full-time backend or full-stack roles</strong> — remote, or Nigeria-based</li>
+          <li><strong>Freelance projects</strong> — landing pages, full-stack apps, AI features, API design</li>
+          <li><strong>Collaborations</strong> — especially civic tech, agri-tech, or AI-for-good</li>
+        </ul>
+        <p>The fastest way to reach me is the contact page. I reply within 24 hours.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>One question for you</h2>
+        <p>If you're a developer reading this: <strong>what are you working on right now that you're not posting about?</strong> Not the polished stuff — the 60% thing that's still figuring itself out. Reply on any of my socials. I read every message.</p>
+      </div>
+
+      <div class="card" style="margin: 24px 0; padding: 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;">
+        <h3 style="margin-bottom: 8px;">Enjoying this?</h3>
+        <p style="margin-bottom: 16px;">Get new build logs and essays straight to your inbox. One email when I publish.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/agene" method="post" style="display:flex; gap:8px; flex-wrap:wrap; max-width:100%;">
+          <input type="email" name="email" placeholder="you@example.com" required style="flex:1; min-width:200px;" />
+          <input type="hidden" value="1" name="embed" />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="giscus-wrapper">
+        <h3>Join the discussion</h3>
+        <p>Comments are powered by GitHub Discussions. Sign in with your GitHub account to reply.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="asobuilds/asobuilds.github.io"
+          data-repo-id="YOUR_REPO_ID"
+          data-category="Announcements"
+          data-category-id="YOUR_CATEGORY_ID"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="../projects.html" class="btn btn-primary">See all projects →</a>
+        <a href="../contact.html" class="btn btn-secondary">Get in touch →</a>
+        <a href="index.html" class="btn btn-ghost">← All writing</a>
+      </div>
+    </article>
+  </main>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

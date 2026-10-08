@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://agene-okoh.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/about</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/experience</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/devcraft-career</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/portfolio-ecosystem</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/nativityguard</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/plant-assistant</loc><priority>0.7</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/leadclear-journal</loc><priority>0.7</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/projects/my-creative-partner</loc><priority>0.7</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/services</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/process</loc><priority>0.7</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/building-my-portfolio</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/leadclear-client-story</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/building-devcraft-career</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/building-nativityguard</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/why-go-for-backends</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/ai-for-agriculture</loc><priority>0.8</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/contact</loc><priority>0.9</priority></url>
+</urlset>

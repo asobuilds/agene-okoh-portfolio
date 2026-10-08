@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="How I built LeadClear Journal's landing page for a paying client — the brief, the build, and the business outcome." />
+  <title>My First Paying Client — LeadClear Journal · Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <article class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">2026 · Client Work · 6 min read</div>
+        <h1>My First Paying Client — Building LeadClear Journal's Landing Page</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">The brief, the build, and why the business outcome mattered more than the code.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Client Work</span><span class="tag">Landing Page</span><span class="tag">Selar</span><span class="tag">Systeme.io</span><span class="tag">Vercel</span>
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="https://leadclear-journal-landing.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Visit the live site →</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>How it started</h2>
+        <p>Anne Abiodun had a product — a 30-day leadership journal — and a paying audience on Selar. What she didn't have was a place to send people that made the product feel real. Selar's checkout page is functional but generic. Customers weren't connecting with the offer.</p>
+        <p>She needed a landing page that could do three things: communicate the value in under 10 seconds, look like the product was worth ₦3,500, and feed leads into her email funnel so she could follow up with people who didn't buy yet.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The constraint that shaped everything</h2>
+        <p>She was already selling on Selar and running email through Systeme.io. I didn't want to replace either of those — that would mean she'd have to migrate data, re-learn a tool, and break whatever was already working.</p>
+        <p>So my rule became: <strong>the landing page plugs into her existing stack, it doesn't replace it.</strong> Two integrations were non-negotiable:</p>
+        <ul class="exp-details">
+          <li><strong>Selar</strong> — every "Buy Now" button links to her existing Selar checkout. Payments stay where her customers already trust them.</li>
+          <li><strong>Systeme.io</strong> — a form at the bottom captures emails for anyone not ready to buy, dropping them directly into her existing funnel.</li>
+        </ul>
+        <p>That decision meant zero learning curve for her. She kept her tools, gained a stronger front door.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What I built</h2>
+        <ul class="exp-details">
+          <li><strong>Hero section</strong> — headline focused on the transformation, not the features. "30 days. Clear mind. Real action." The product name and price are right below, so the offer is unambiguous.</li>
+          <li><strong>Product walkthrough</strong> — the Plan → Act → Reflect → Improve framework rendered visually, so buyers understand the structure before scrolling.</li>
+          <li><strong>Audience segmentation</strong> — separate blocks for students, young professionals, entrepreneurs, and managers. Same product, four different reasons to buy.</li>
+          <li><strong>FAQ section</strong> — pre-empted the four most common objections in her DMs: "Is it printable?" "Is it physical or digital?" "Do I need experience?" "How long does shipping take?"</li>
+          <li><strong>Selar CTA buttons</strong> — repeated at four scroll depths, each linking to her live checkout link.</li>
+          <li><strong>Systeme.io capture form</strong> — for the "interested but not ready" visitor, feeding her lead list.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Technical decisions</h2>
+        <p><strong>Static HTML/CSS/JS.</strong> No framework, no build step. Loads in under a second on Nigerian 4G, which matters when a chunk of your audience is on mobile data.</p>
+        <p><strong>Mobile-first CSS.</strong> Over 70% of her traffic comes from phones. Every section is tested at 375px width first, then scaled up.</p>
+        <p><strong>Vercel for deployment.</strong> Free, global CDN, HTTPS included, and she gets a live URL she can share instantly. Any future edit I make goes live in under 10 seconds.</p>
+        <p><strong>No analytics bloat.</strong> Just Vercel Analytics — lightweight, privacy-respecting, and gives her the two numbers that matter: visitors and CTA clicks.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The moment it clicked</h2>
+        <p>When I sent her the live preview link, her response was immediate:</p>
+        <p style="font-family: var(--font-mono); font-size: 0.9rem; padding: 16px 20px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; margin: 16px 0; color: var(--text); font-style: italic;">
+          "This is really nice honestly. Beautiful — just exactly what I had in mind and even better. God bless you. I will be inviting you to attend my webinars."
+        </p>
+        <p>That last line is the part that mattered most. Not the compliment — the invitation. She's a business owner with an audience. When she brings me into her webinars, she's putting her reputation behind my work. That's the trust signal that no portfolio piece can manufacture.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What I'd do differently</h2>
+        <p>I'd have added A/B testing from day one. Two versions of the hero headline, split 50/50 for the first two weeks. Right now we're guessing at what converts, and Anne's audience is small enough that every visitor's opinion matters. That's the next add.</p>
+        <p>I'd also set up a lightweight dashboard for her — visitors, CTA clicks, email captures — so she can see the funnel working without asking me to check.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The lesson</h2>
+        <p>Technical excellence gets the job done. <strong>Understanding the business behind the brief</strong> is what makes the client come back. Anne didn't hire me because I know React or Go or Python. She hired me because I asked how her funnel worked before I wrote a single line of HTML — and then built something that plugged into it instead of fighting it.</p>
+        <p>For any freelancer starting out: don't sell code. Sell the outcome. The code is how you deliver it.</p>
+      </div>
+
+      <div class="card" style="margin: 24px 0; padding: 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;">
+        <h3 style="margin-bottom: 8px;">Enjoying this?</h3>
+        <p style="margin-bottom: 16px;">Get new build logs and essays straight to your inbox. One email when I publish.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/agene" method="post" class="embeddable-buttondown-form" style="display:flex; gap:8px; flex-wrap:wrap; max-width:100%;">
+          <input type="email" name="email" placeholder="you@example.com" required style="flex:1; min-width:200px;" />
+          <input type="hidden" value="1" name="embed" />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="https://leadclear-journal-landing.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Visit LeadClear Landing →</a>
+        <a href="../projects/leadclear-journal.html" class="btn btn-secondary">Project page →</a>
+        <a href="index.html" class="btn btn-ghost">↝ All writing</a>
+      </div>
+      <div class="giscus-wrapper">
+        <h3>Join the discussion</h3>
+        <p>Comments are powered by GitHub Discussions. Sign in with your GitHub account to reply.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="asobuilds/asobuilds.github.io"
+          data-repo-id="YOUR_REPO_ID"
+          data-category="Announcements"
+          data-category-id="YOUR_CATEGORY_ID"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </article>
+  </main>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

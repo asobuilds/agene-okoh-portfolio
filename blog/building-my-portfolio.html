@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="How I rebuilt my portfolio from a single page into a multi-page ecosystem — every step, every mistake, every fix." />
+  <title>I Rebuilt My Portfolio From Scratch — Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <article class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">2026 · Build Log · 9 min read</div>
+        <h1>I Rebuilt My Portfolio From Scratch — Here's Everything That Broke</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">From a single long page to a full ecosystem: design system, multi-page architecture, SEO, blog, contact funnel, and the mistakes I'd repeat again.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">HTML/CSS/JS</span><span class="tag">Design System</span><span class="tag">SEO</span><span class="tag">Vercel</span><span class="tag">Build Log</span>
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">See the result →</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The starting point</h2>
+        <p>My original portfolio was one long HTML page. It had all the right pieces — about, experience, projects, skills, contact — stacked vertically. Recruiters would scroll, get tired, and bounce. Project links were buried halfway down. No blog. No way to rank in search. And most importantly: <strong>no clear pitch to a potential client.</strong> It read like a résumé, not a business.</p>
+        <p>So I rebuilt the whole thing from scratch. Here's what that looked like.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Decision 1 — Multi-page, not single page</h2>
+        <p>Every major section became its own page: Home, About, Experience, Projects, Services, Process, Contact, Writing, plus a 404. Each project also got its own case study.</p>
+        <p>Why this matters: <strong>search engines rank pages, not sections.</strong> A dedicated page for NativityGuard can rank for "civic tech Nigeria" in a way that a single-page scroll never could. A recruiter looking for a specific project now lands directly on it.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Decision 2 — A real design system</h2>
+        <p>I pulled every color, spacing value, font size, shadow, and border-radius into CSS variables at the top of one stylesheet. That gave me three wins instantly:</p>
+        <ul class="exp-details">
+          <li><strong>Dark mode</strong> is six lines of code — just swap the variables</li>
+          <li><strong>Consistency</strong> across all 17 pages without copy-pasting values</li>
+          <li><strong>Speed</strong> — one file to edit when I want to change the accent color</li>
+        </ul>
+        <p>The design language is deliberately "developer-native": monospace accents, a status bar that looks like a shell prompt, a terminal overlay on <code>Ctrl + \`</code>. It signals the audience I want without needing to spell it out.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Decision 3 — A build log (you're reading it)</h2>
+        <p>A portfolio shows what you can do. A blog shows <em>how you think</em>. I added a <code>/blog</code> section for exactly this — build logs, architecture notes, lessons. Every post is a written artifact that ranks in search and gives recruiters a way to evaluate my reasoning before they ever meet me.</p>
+        <p>The posts already live: how I built NativityGuard, why I reach for Go, what AI in agriculture actually needs, how DevCraft Career works, my first paying client. This one makes six.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Decision 4 — Ship on Vercel, wire everything</h2>
+        <p>Zero-cost hosting on a global CDN, instant deployments on every push, HTTPS included. I connected:</p>
+        <ul class="exp-details">
+          <li><strong>Formspree</strong> for the contact form — submits land in my inbox within seconds</li>
+          <li><strong>Vercel Analytics</strong> — I can see which pages recruiters actually open</li>
+          <li><strong>Google Search Console</strong> — property verified, sitemap submitted, pages indexing</li>
+          <li><strong>OpenGraph tags</strong> — links I paste into LinkedIn show a real preview card</li>
+          <li><strong>Custom security headers</strong> via <code>vercel.json</code></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What broke — and what I learned</h2>
+        <p>Three things went wrong that are worth documenting:</p>
+        <p><strong>1. My résumé PDF was HTML mislabeled as .pdf.</strong> I printed the page from Chrome, saved as PDF, and it opened as garbage. The fix was using Microsoft Edge's headless print-to-PDF from the command line. Lesson: verify any file you're going to hand to a recruiter by opening it in a fresh viewer, not just trusting the extension.</p>
+        <p><strong>2. At one point my homepage literally contained the text `C:\Users\USER`.</strong> A stray PowerShell redirection wrote a path into <code>index.html</code> instead of running as intended. Deployed silently. Only caught it by curl-ing my own live site. Lesson: after every deploy, curl the live URL and confirm the response isn't <em>wrong</em>, not just <em>present</em>.</p>
+        <p><strong>3. Edge's headless screenshots "failed" for 5 minutes.</strong> The script checked for the output file before Edge finished writing it. Adding a 3-second wait fixed it. Lesson: when a tool is asynchronous, don't test for its output immediately — or test with a retry loop.</p>
+        <p>None of these were disasters. All of them are the actual work of shipping.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What I'd do differently next time</h2>
+        <p>If I were rebuilding today, I'd use <strong>Astro or 11ty</strong> instead of hand-written static HTML. Same static output, same performance, but shared layouts and content collections would make the blog 10× faster to maintain. Every new post would be one Markdown file, not one 200-line HTML file.</p>
+        <p>I'd also add <strong>testimonials earlier</strong> — they're the highest-leverage content on the site. I had them at the end, but they should have been above the fold from day one.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The result</h2>
+        <p>Live at <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener">agene-okoh.vercel.app</a> — a portfolio that doubles as its own case study. Six projects, six blog posts, working contact funnel, SEO plumbing, analytics, and a design system I can extend without rewriting anything.</p>
+        <p>More importantly: it's the first version of a system I'll keep shipping on. Every new project, every new post, is one commit away from being live.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The takeaway</h2>
+        <p>A portfolio isn't a page — it's a system. Build it like one. Design it to grow. Document the process. Then let the work speak.</p>
+      </div>
+
+      <div class="card" style="margin: 24px 0; padding: 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;">
+        <h3 style="margin-bottom: 8px;">Enjoying this?</h3>
+        <p style="margin-bottom: 16px;">Get new build logs and essays straight to your inbox. One email when I publish.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/agene" method="post" class="embeddable-buttondown-form" style="display:flex; gap:8px; flex-wrap:wrap; max-width:100%;">
+          <input type="email" name="email" placeholder="you@example.com" required style="flex:1; min-width:200px;" />
+          <input type="hidden" value="1" name="embed" />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">See the Live Site →</a>
+        <a href="../projects/portfolio-ecosystem.html" class="btn btn-secondary">Project page →</a>
+        <a href="index.html" class="btn btn-ghost">↝ All writing</a>
+      </div>
+      <div class="giscus-wrapper">
+        <h3>Join the discussion</h3>
+        <p>Comments are powered by GitHub Discussions. Sign in with your GitHub account to reply.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="asobuilds/asobuilds.github.io"
+          data-repo-id="YOUR_REPO_ID"
+          data-category="Announcements"
+          data-category-id="YOUR_CATEGORY_ID"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </article>
+  </main>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

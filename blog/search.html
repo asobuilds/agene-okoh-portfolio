@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Search posts, essays, and projects by Agene S. Okoh." />
+  <title>Search — Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <section class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">Search</div>
+        <h1>Find something</h1>
+        <p>Search blog posts, essays, and projects.</p>
+      </div>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Try: Go, philosophy, AI, civic tech..."
+        autofocus
+        autocomplete="off"
+        style="width:100%; max-width:600px; margin-bottom:12px;"
+      />
+      <p id="search-status" style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-dim); margin-bottom:24px;"></p>
+      <div id="search-results"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script>
+    (async function () {
+      const input = document.getElementById('search-input');
+      const results = document.getElementById('search-results');
+      const status = document.getElementById('search-status');
+
+      let data = [];
+      try {
+        const res = await fetch('../search-index.json');
+        data = await res.json();
+      } catch (err) {
+        results.innerHTML = '<p style="color:var(--text-muted);">Search index not found.</p>';
+        return;
+      }
+
+      const fuse = new Fuse(data, {
+        keys: [
+          { name: 'title', weight: 2 },
+          { name: 'tags', weight: 1.5 },
+          { name: 'desc', weight: 1 }
+        ],
+        threshold: 0.4,
+        ignoreLocation: true,
+        minMatchCharLength: 2
+      });
+
+      function linkFor(item) {
+        // Prepend the right relative prefix depending on type
+        if (item.url.indexOf('/blog/') === 0) {
+          return item.url.replace('/blog/', '') + '.html';
+        }
+        if (item.url.indexOf('/projects/') === 0) {
+          return '../' + item.url.substring(1) + '.html';
+        }
+        return '../' + item.url.replace(/^\//, '') + '.html';
+      }
+
+      function render(items) {
+        if (!items.length) {
+          results.innerHTML = '<p style="color:var(--text-muted);">No results. Try different keywords.</p>';
+          return;
+        }
+        results.innerHTML = items.map(function (r) {
+          const p = r.item;
+          return '<a href="' + linkFor(p) + '" class="project-card" style="margin-bottom:12px; display:block;">' +
+            '<div class="project-body">' +
+            '<div class="section-eyebrow" style="margin-bottom:4px;">' + p.date + '</div>' +
+            '<h3>' + p.title + '</h3>' +
+            '<p>' + p.desc + '</p>' +
+            '</div></a>';
+        }).join('');
+      }
+
+      function update(q) {
+        if (!q) {
+          status.textContent = data.length + ' entries';
+          render(data.map(function (d) { return { item: d }; }));
+          return;
+        }
+        const found = fuse.search(q).slice(0, 20);
+        status.textContent = found.length + ' result' + (found.length === 1 ? '' : 's') + ' for "' + q + '"';
+        render(found);
+      }
+
+      input.addEventListener('input', function () {
+        update(input.value.trim());
+      });
+
+      // Show all by default
+      update('');
+    })();
+  </script>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

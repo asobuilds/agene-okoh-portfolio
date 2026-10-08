@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="How I designed the architecture of NativityGuard — a Go + React civic-tech platform for rural Nigerian security workflows." />
+  <title>Building NativityGuard — Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <article class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">2025 · Engineering · 8 min read</div>
+        <h1>Building NativityGuard — Architecture of a Civic-Tech Platform</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">How I designed a full case-lifecycle system for rural Nigerian security workflows.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Go</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Civic Tech</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Why I built this</h2>
+        <p>In rural Nigerian communities, the gap between citizens and local security units is wide. Cases are handled informally, accountability is low, and response times suffer. There's no digital workflow for reporting incidents, tracking cases, or ensuring follow-ups happen.</p>
+        <p>NativityGuard is my attempt to close that gap with technology — while being extremely deliberate about not enabling vigilantism. It's a digital operating layer that plugs into existing lawful security institutions.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The core workflow I designed</h2>
+        <p>Rather than treating this as a chat system with a dashboard, I modeled it as a <strong>case lifecycle</strong>:</p>
+        <p style="font-family: var(--font-mono); font-size: 0.85rem; padding: 16px; background: var(--bg-alt); border-radius: 8px; margin: 12px 0; color: var(--accent); overflow-x: auto;">signal → intake → triage → routing → assignment → dispatch → arrival → investigation → evidence → resolution → audit → prevention</p>
+        <p>Each transition is a state in the case — with an actor, a timestamp, and evidence. This makes every action auditable and prevents the "who said what" problem that plagues informal case handling.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Tech choices and why</h2>
+        <ul class="exp-details">
+          <li><strong>Go (Gin + GORM)</strong> — I needed a fast, compile-time-checked backend with real concurrency for real-time case updates. Go's goroutines and WebSocket hub pattern handle the notification fan-out elegantly.</li>
+          <li><strong>PostgreSQL with UUIDs</strong> — Cases, evidence, and audit logs are all UUID-keyed so the database can be sharded later without migration pain.</li>
+          <li><strong>React 19 + Vite</strong> — Instant HMR during development, small bundle in production. Tailwind for the UI layer so I don't fight CSS naming.</li>
+          <li><strong>JWT auth</strong> — Stateless API tokens. Scales horizontally from day one.</li>
+          <li><strong>Redis + Docker Compose</strong> — Session cache and local dev parity. Production runs on Render.com.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What was hard</h2>
+        <p><strong>The permission model.</strong> Four roles (resident, officer, unit admin, system admin) with different scopes, geographic boundaries, and case access rules. I ended up encoding this as a small policy engine on top of JWT claims rather than scattering <code>if user.role === 'admin'</code> everywhere.</p>
+        <p><strong>GIS without a GIS team.</strong> The crime-index map uses PostGIS with a lightweight GeoJSON serializer. Serving vector tiles is out of scope for v1 — I'm using clustered marker aggregation instead.</p>
+        <p><strong>Designing for distrust.</strong> Communities wary of surveillance need to trust that the system can't be weaponized. That drove the audit-log-by-default decision and the explicit "does not replace lawful institutions" framing.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>A decision I'd revisit</h2>
+        <p>I built the case state machine with string columns rather than a proper FSM library. It works, but adding a new state means touching validation, migrations, and the UI in three places. If I rebuilt, I'd use a transition table with an enum type from day one.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>What's next</h2>
+        <p>The intelligence tier (Python + FastAPI + scikit-learn + GeoPandas) is next — anomaly detection on incident patterns, hotspot prediction, and image analysis for evidence triage. MLflow for model versioning.</p>
+        <p>Follow the progress on GitHub.</p>
+      </div>
+
+      <div class="card" style="margin: 24px 0; padding: 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;">
+        <h3 style="margin-bottom: 8px;">Enjoying this?</h3>
+        <p style="margin-bottom: 16px;">Get new build logs and essays straight to your inbox. One email when I publish.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/agene" method="post" class="embeddable-buttondown-form" style="display:flex; gap:8px; flex-wrap:wrap; max-width:100%;">
+          <input type="email" name="email" placeholder="you@example.com" required style="flex:1; min-width:200px;" />
+          <input type="hidden" value="1" name="embed" />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="https://github.com/asobuilds/nativity-guard" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+        <a href="../projects/nativityguard.html" class="btn btn-secondary">Project page →</a>
+        <a href="index.html" class="btn btn-ghost">↝ All writing</a>
+      </div>
+      <div class="giscus-wrapper">
+        <h3>Join the discussion</h3>
+        <p>Comments are powered by GitHub Discussions. Sign in with your GitHub account to reply.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="asobuilds/asobuilds.github.io"
+          data-repo-id="YOUR_REPO_ID"
+          data-category="Announcements"
+          data-category-id="YOUR_CATEGORY_ID"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </article>
+  </main>
+  <script src="../assets/js/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

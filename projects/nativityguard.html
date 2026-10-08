@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NativityGuard — a digital public-safety platform connecting rural Nigerian communities and local security units." />
+  <title>NativityGuard — Case Study · Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="projects" data-depth="1">
+  <main class="page" id="main">
+    <section class="section container fade-in">
+      <div class="mockup-hero" style="margin: 24px 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+        <img src="../assets/images/screenshots/nativityguard.png" alt="Project preview" style="width: 100%; display: block;" />
+      </div>
+
+      <div class="section-header">
+        <div class="section-eyebrow">Case Study · Civic Tech</div>
+        <h1>🛡︝ NativityGuard</h1>
+        <p style="font-size: 1.15rem;">A digital operating layer for community-centered public safety — connecting grassroots observations and citizen participation to accountable, permission-controlled operational case management.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Go 1.21</span><span class="tag">React 19</span><span class="tag">PostgreSQL</span><span class="tag">Gin</span><span class="tag">GORM</span><span class="tag">GIS</span><span class="tag">JWT</span>
+        </div>
+        <div style="margin-top: 20px;">
+<a href="https://github.com/asobuilds/nativity-guard" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🧩 The Problem</h3>
+        <p>In rural Nigerian communities, the gap between citizens and local security units is wide. Cases are handled informally, accountability is low, and response times suffer. There's no digital workflow for reporting incidents, tracking cases, or ensuring that follow-ups actually happen. The community lacks a transparent, auditable system for public safety.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>💡 The Solution</h3>
+        <p>NativityGuard links residents, community structures, security units/officers, and administrators through a single, auditable workflow: <strong>signal → intake → triage → routing → assignment → dispatch → arrival → investigation → evidence → resolution → audit → prevention.</strong></p>
+        <ul class="exp-details" style="margin-top: 12px;">
+          <li>Residents can report incidents, raise SOS alerts, submit evidence, and track case progress</li>
+          <li>Security units own cases for a geographic area, allocate officers, and run local oversight</li>
+          <li>Officers work assigned cases: dispatch, arrival, progress, evidence, closure</li>
+          <li>Intelligent map with crime indices and GIS functionality</li>
+          <li>Full audit trail, ratings, transfers, and community engagement (forum, announcements, events)</li>
+          <li>AI assistance via OpenRouter chat completions</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>⚙︝ Technical Architecture</h3>
+        <ul class="exp-details">
+          <li><strong>API / system of record:</strong> Go 1.21 (module: security-solution) · Gin · GORM · PostgreSQL with UUID primary keys · JWT authentication</li>
+          <li><strong>Web client:</strong> React 19 · Vite · Tailwind · lucide-react</li>
+          <li><strong>Intelligence / automation tier (planned):</strong> Python · FastAPI · Celery · scikit-learn · GeoPandas · MLflow</li>
+          <li><strong>Infrastructure:</strong> PostgreSQL · Redis · Docker Compose · Render.com</li>
+          <li><strong>AI:</strong> OpenRouter chat completions for intelligent assistance</li>
+          <li><strong>Real-time:</strong> WebSocket hub for live case updates and notifications</li>
+          <li><strong>Domains:</strong> Cases · Evidence · Progress timeline · Officers · SOS alerts · Notifications (in-app/push/SMS/email) · Ratings · Finance · Peacebuilding trust scores · Video analytics · Communication (rooms, messages, calls) · Audit logs</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🎯 Impact</h3>
+        <p>NativityGuard digitalizes the entire workflow of how security units handle and settle cases. It promotes accountability, enables quick response, provides location tracing, and employs an intelligent map that shows crime indices with GIS functionality. It does not replace lawful security institutions and is explicitly designed not to encourage vigilantism.</p>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="https://github.com/asobuilds/nativity-guard" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+        <a href="../projects.html" class="btn btn-secondary">↝ All Projects</a>
+      </div>
+    </section>
+  </main>
+  <script src="../assets/js/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

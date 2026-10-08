@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="How I rebuilt agene-okoh.vercel.app as a multi-page portfolio ecosystem — architecture, design system, SEO, and deployment." />
+  <title>Portfolio Ecosystem — Case Study · Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="projects" data-depth="1">
+  <main class="page" id="main">
+    <section class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">Case Study · Self-Built</div>
+        <h1>🎨 Portfolio Ecosystem</h1>
+        <p style="font-size: 1.15rem;">Rebuilt my single-page portfolio as a multi-page ecosystem with a design system, SEO, blog, terminal, and a working contact funnel.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">HTML/CSS/JS</span><span class="tag">Design System</span><span class="tag">SEO</span><span class="tag">Vercel</span><span class="tag">Vercel Analytics</span>
+        </div>
+        <div class="mockup-hero" style="margin: 24px 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+          <img src="../assets/images/screenshots/portfolio.png" alt="Portfolio homepage preview" style="width: 100%; display: block;" />
+        </div>
+        <div style="margin-top: 20px;">
+          <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Visit Live Site →</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🧩 The Challenge</h3>
+        <p>My original portfolio was a single long page. Recruiters had to scroll forever, project links were buried, and there was no way to rank for anything in search. Worst of all: no clear call to action for potential clients. It was a résumé, not a business asset.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>💡 The Solution</h3>
+        <p>A complete ecosystem: landing page, dedicated service page, per-project case studies, a blog for build logs, a working contact form with email delivery, Google Analytics, SEO plumbing, and a design system shared across every page.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>⚙️ Architecture</h3>
+        <ul class="exp-details">
+          <li><strong>Multi-page structure:</strong> separate pages for Home, About, Experience, Projects, Services, Process, Contact, Writing, and 404</li>
+          <li><strong>Project case studies:</strong> a dedicated page per project, including this one</li>
+          <li><strong>Blog system:</strong> index + individual posts, each with its own meta description for SEO</li>
+          <li><strong>Asset organization:</strong> <code>assets/css/</code>, <code>assets/js/</code>, <code>assets/images/</code>, <code>assets/documents/</code></li>
+          <li><strong>Vercel deploy:</strong> clean URLs, cache headers, security headers via <code>vercel.json</code></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🎨 Design System</h3>
+        <ul class="exp-details">
+          <li><strong>CSS variables</strong> for colors, spacing, typography, shadows, and radii — one source of truth</li>
+          <li><strong>Dark mode</strong> with <code>localStorage</code> persistence across pages</li>
+          <li><strong>Custom loader</strong> with boot log (session-aware — only shows on first visit)</li>
+          <li><strong>Terminal overlay</strong> (<code>Ctrl + \`</code>) with 10+ commands — a signature touch</li>
+          <li><strong>Canvas particle system</strong> that respects <code>prefers-reduced-motion</code> and reduces density on mobile</li>
+          <li><strong>Scroll-triggered animations</strong> via IntersectionObserver</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>📱 Responsiveness</h3>
+        <p>Every page is tested and tuned for iPhone (with notch safe areas), Android, tablets, laptops, ultrawide, and 4K displays. Fluid typography uses <code>clamp()</code>, and all interactive elements respect <code>@media (hover: none)</code> so nothing "sticks" on touch devices.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🔍 SEO &amp; Discovery</h3>
+        <ul class="exp-details">
+          <li><code>sitemap.xml</code> with 17+ URLs, priority-weighted</li>
+          <li><code>robots.txt</code> pointing Google at the sitemap</li>
+          <li>OpenGraph + Twitter Card meta tags on every page</li>
+          <li>Google Search Console property verified via meta tag</li>
+          <li>Sitemap submitted and accepted — pages indexing</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>📬 Contact Funnel</h3>
+        <p>Contact form is wired to <strong>Formspree</strong> — submits land in my inbox within seconds. Direct links to WhatsApp, LinkedIn, GitHub, and X sit above the form so visitors can reach me on whichever channel they prefer.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>📊 Analytics</h3>
+        <p><strong>Vercel Analytics</strong> is enabled — I can see which pages get visited, which project case studies recruiters open, and which blog posts land. Lightweight, privacy-respecting, no cookie banner needed.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>🔍 A Decision I'd Revisit</h3>
+        <p>I wrote the site as pure static HTML with a JS-injected header/footer. That was fast to build, but every new page needs its own file. If I rebuilt it today, I'd use Astro or 11ty — same static output, but shared layouts and content collections would make the blog 10× faster to maintain.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h3>📈 Result</h3>
+        <ul class="exp-details">
+          <li>Live at <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener">agene-okoh.vercel.app</a></li>
+          <li>Zero-cost hosting on Vercel's global CDN</li>
+          <li>Sub-second load times on 4G</li>
+          <li>Working contact funnel + résumé download + analytics</li>
+          <li>Serves as both my portfolio and my live case study of full-stack delivery</li>
+        </ul>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="https://agene-okoh.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Visit Live Site →</a>
+        <a href="../blog/building-my-portfolio.html" class="btn btn-secondary">Read the build story →</a>
+        <a href="../projects.html" class="btn btn-ghost">← All Projects</a>
+      </div>
+    </section>
+  </main>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Why I reach for Go for real backends — a practical decision framework between Go and Python." />
+  <title>Why I Reach for Go for Real Backends — Agene S. Okoh</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Agene S. Okoh � Build Log" href="/feed.xml" />
+</head>
+<body data-page="blog" data-depth="1">
+  <main class="page" id="main">
+    <article class="section container fade-in">
+      <div class="section-header">
+        <div class="section-eyebrow">2025 · Engineering · 6 min read</div>
+        <h1>Why I Reach for Go for Real Backends</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">Python is faster to prototype. Go is faster in production. Here's how I decide.</p>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Go</span><span class="tag">Python</span><span class="tag">Backends</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>The short answer</h2>
+        <p>If the workload is <strong>I/O-bound, concurrent, and long-lived</strong> → Go. If the workload is <strong>data-heavy, ML-adjacent, or needs iteration speed</strong> → Python. Most real products need both, split by service boundary.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Why Go wins in production</h2>
+        <ul class="exp-details">
+          <li><strong>Real concurrency.</strong> Goroutines and channels make the WebSocket hub in NativityGuard trivial. In Python I'd be fighting the GIL or reaching for asyncio + a message queue.</li>
+          <li><strong>Small binary, no runtime.</strong> One static binary. No virtualenv drift. Deployment becomes a single artifact.</li>
+          <li><strong>Compile-time safety.</strong> The type system catches 80% of "undefined is not a function" bugs before they hit staging.</li>
+          <li><strong>Boring performance.</strong> Predictable latency under load. No "why is the p99 suddenly 3 seconds" weekends.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>When Python is still the right answer</h2>
+        <ul class="exp-details">
+          <li><strong>ML/AI pipelines.</strong> PyTorch, scikit-learn, Hugging Face. Non-negotiable.</li>
+          <li><strong>Data exploration.</strong> Pandas + Jupyter beats anything Go has.</li>
+          <li><strong>Rapid prototyping.</strong> If I'm still figuring out what the thing even is, Python lets me pivot in an afternoon.</li>
+          <li><strong>Glue code.</strong> Scripts, migrations, one-off tools.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>How this plays out in practice</h2>
+        <p>NativityGuard is a good example. The <strong>API and system of record</strong> is Go — because it's concurrent, long-lived, and needs to be boringly reliable. The <strong>intelligence tier</strong> (planned) is Python — because ML lives there.</p>
+        <p>They talk over HTTP/gRPC. Each service is owned by the language that fits its workload. No false dilemma.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <h2>Rules I've settled on</h2>
+        <ol class="exp-details" style="list-style: decimal; padding-left: 24px;">
+          <li>Start with Python for anything exploratory. Ship the first version.</li>
+          <li>When p99 latency or concurrency becomes the bottleneck, port the hot path to Go.</li>
+          <li>Never rewrite "for performance" without a metric that justifies it.</li>
+          <li>Split by service, not by preference.</li>
+        </ol>
+      </div>
+
+      <div class="card" style="margin: 24px 0; padding: 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;">
+        <h3 style="margin-bottom: 8px;">Enjoying this?</h3>
+        <p style="margin-bottom: 16px;">Get new build logs and essays straight to your inbox. One email when I publish.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/agene" method="post" class="embeddable-buttondown-form" style="display:flex; gap:8px; flex-wrap:wrap; max-width:100%;">
+          <input type="email" name="email" placeholder="you@example.com" required style="flex:1; min-width:200px;" />
+          <input type="hidden" value="1" name="embed" />
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+        </form>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 32px;">
+        <a href="../projects/nativityguard.html" class="btn btn-primary">See it in NativityGuard →</a>
+        <a href="index.html" class="btn btn-ghost">↝ All writing</a>
+      </div>
+      <div class="giscus-wrapper">
+        <h3>Join the discussion</h3>
+        <p>Comments are powered by GitHub Discussions. Sign in with your GitHub account to reply.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="asobuilds/asobuilds.github.io"
+          data-repo-id="YOUR_REPO_ID"
+          data-category="Announcements"
+          data-category-id="YOUR_CATEGORY_ID"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </article>
+  </main>
+  <script src="../assets/js/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
