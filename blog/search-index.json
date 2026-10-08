@@ -1,16 +1,100 @@
 [
-  {"title": "The Map and the Territory", "url": "/blog/map-and-territory", "date": "Sep 14 2026", "tags": "philosophy engineering AI infrastructure", "desc": "Software engineering vs infrastructure — a philosophical look at where value sits."},
-  {"title": "The Honest State of My Work", "url": "/blog/honest-state-of-my-work", "date": "Sep 13 2026", "tags": "build in public career", "desc": "What's shipped, what's cooking, and why real progress beats polished fiction."},
-  {"title": "I Rebuilt My Portfolio From Scratch", "url": "/blog/building-my-portfolio", "date": "Sep 12 2026", "tags": "build log HTML CSS portfolio", "desc": "Single page to full ecosystem — every mistake and every fix."},
-  {"title": "My First Paying Client — LeadClear", "url": "/blog/leadclear-client-story", "date": "Sep 11 2026", "tags": "client work selar systeme.io landing page", "desc": "The brief, the build, and the business outcome."},
-  {"title": "How I Built DevCraft Career", "url": "/blog/building-devcraft-career", "date": "Sep 10 2026", "tags": "react python jobs AI", "desc": "A CV builder + AI job matcher."},
-  {"title": "Building NativityGuard", "url": "/blog/building-nativityguard", "date": "Sep 09 2026", "tags": "go react postgresql civic tech", "desc": "Architecture of a civic-tech platform."},
-  {"title": "Why I Reach for Go for Real Backends", "url": "/blog/why-go-for-backends", "date": "Sep 08 2026", "tags": "go python backends", "desc": "How I decide between Go and Python."},
-  {"title": "AI for Agriculture", "url": "/blog/ai-for-agriculture", "date": "Sep 07 2026", "tags": "AI ML agriculture PWA", "desc": "What actually works in the field."},
-  {"title": "DevCraft Career", "url": "/projects/devcraft-career", "date": "Project", "tags": "react python jobs", "desc": "CV builder + AI job matcher — deployed and in use."},
-  {"title": "NativityGuard", "url": "/projects/nativityguard", "date": "Project", "tags": "go react postgresql GIS civic tech", "desc": "Digital public-safety platform for rural Nigerian communities."},
-  {"title": "Plant Assistant", "url": "/projects/plant-assistant", "date": "Project", "tags": "python AI ML agriculture", "desc": "AI plant identification for small-scale farmers."},
-  {"title": "LeadClear Journal", "url": "/projects/leadclear-journal", "date": "Project", "tags": "landing page client selar", "desc": "Client landing page with payment + funnel integration."},
-  {"title": "My Creative Partner", "url": "/projects/my-creative-partner", "date": "Project", "tags": "3D AI voice collaborative", "desc": "3D philosophical game with text/voice prompting."},
-  {"title": "Portfolio Ecosystem", "url": "/projects/portfolio-ecosystem", "date": "Project", "tags": "HTML CSS SEO design system", "desc": "This site — multi-page ecosystem with blog, SEO, and analytics."}
+  {
+    "title": "The Map and the Territory — Two Kinds of Engineering Knowledge",
+    "url": "/blog/map-and-territory",
+    "date": "Dec 31, 2025",
+    "tags": "Essay Philosophy Engineering AI Career",
+    "desc": "A philosophical comparison of software engineering skills and infrastructure knowledge — where value sits in the AI era, and why the choice isn't binary."
+  },
+  {
+    "title": "How I Built DevCraft Career",
+    "url": "/blog/building-devcraft-career",
+    "date": "Dec 31, 2025",
+    "tags": "React Python Job APIs Vercel",
+    "desc": "How I built DevCraft Career — a CV builder that scans the internet for matching jobs and sends users the apply link."
+  },
+  {
+    "title": "The Honest State of My Work",
+    "url": "/blog/honest-state-of-my-work",
+    "date": "Dec 31, 2025",
+    "tags": "Build in Public Career Engineering",
+    "desc": "An honest look at what's shipped, what's in progress, and why I'd rather show real progress than polished fiction."
+  },
+  {
+    "title": "I Rebuilt My Portfolio From Scratch",
+    "url": "/blog/building-my-portfolio",
+    "date": "Dec 31, 2025",
+    "tags": "HTML/CSS/JS Design System SEO Vercel Build Log",
+    "desc": "How I rebuilt my portfolio from a single page into a multi-page ecosystem — every step, every mistake, every fix."
+  },
+  {
+    "title": "My First Paying Client — Building LeadClear Journal's Landing Page",
+    "url": "/blog/leadclear-client-story",
+    "date": "Dec 31, 2025",
+    "tags": "Client Work Landing Page Selar Systeme.io Vercel",
+    "desc": "How I built LeadClear Journal's landing page for a paying client — the brief, the build, and the business outcome."
+  },
+  {
+    "title": "Building NativityGuard",
+    "url": "/blog/building-nativityguard",
+    "date": "Dec 31, 2024",
+    "tags": "Go React PostgreSQL Civic Tech",
+    "desc": "How I designed the architecture of NativityGuard — a Go + React civic-tech platform for rural Nigerian security workflows."
+  },
+  {
+    "title": "Why I Reach for Go for Real Backends",
+    "url": "/blog/why-go-for-backends",
+    "date": "Dec 31, 2024",
+    "tags": "Go Python Backends",
+    "desc": "Why I reach for Go for real backends — a practical decision framework between Go and Python."
+  },
+  {
+    "title": "AI for Agriculture",
+    "url": "/blog/ai-for-agriculture",
+    "date": "Dec 31, 2024",
+    "tags": "AI/ML PWA Agriculture",
+    "desc": "Lessons from building Plant Assistant — AI for small-scale farmers, and why the ML model is the easy part."
+  },
+  {
+    "title": "DevCraft Career",
+    "url": "/projects/devcraft-career",
+    "date": "Project",
+    "tags": "react python jobs",
+    "desc": "CV builder + AI job matcher — deployed and in use."
+  },
+  {
+    "title": "NativityGuard",
+    "url": "/projects/nativityguard",
+    "date": "Project",
+    "tags": "go react postgresql GIS civic tech",
+    "desc": "Digital public-safety platform for rural Nigerian communities."
+  },
+  {
+    "title": "Plant Assistant",
+    "url": "/projects/plant-assistant",
+    "date": "Project",
+    "tags": "python AI ML agriculture",
+    "desc": "AI plant identification for small-scale farmers."
+  },
+  {
+    "title": "LeadClear Journal",
+    "url": "/projects/leadclear-journal",
+    "date": "Project",
+    "tags": "landing page client selar",
+    "desc": "Client landing page with payment + funnel integration."
+  },
+  {
+    "title": "My Creative Partner",
+    "url": "/projects/my-creative-partner",
+    "date": "Project",
+    "tags": "3D AI voice collaborative",
+    "desc": "3D philosophical game with text/voice prompting."
+  },
+  {
+    "title": "Portfolio Ecosystem",
+    "url": "/projects/portfolio-ecosystem",
+    "date": "Project",
+    "tags": "HTML CSS SEO design system",
+    "desc": "This site — multi-page ecosystem with blog, SEO, and analytics."
+  }
 ]

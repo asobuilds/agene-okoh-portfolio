@@ -5,72 +5,64 @@
     <link>https://agene-okoh.vercel.app/blog</link>
     <description>Notes from building real products — architecture, lessons, and research.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 20:41:00 GMT</lastBuildDate>
     <atom:link href="https://agene-okoh.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
       <title>The Map and the Territory — Two Kinds of Engineering Knowledge</title>
       <link>https://agene-okoh.vercel.app/blog/map-and-territory</link>
       <guid>https://agene-okoh.vercel.app/blog/map-and-territory</guid>
-      <description>A philosophical comparison of software engineering and infrastructure — and why the AI era pushes value to both ends, not one.</description>
-      <pubDate>Mon, 14 Sep 2026 12:00:00 GMT</pubDate>
+      <description>A philosophical comparison of software engineering skills and infrastructure knowledge — where value sits in the AI era, and why the choice isn&apos;t binary.</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
     </item>
-
-    <item>
-      <title>The Honest State of My Work</title>
-      <link>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</link>
-      <guid>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</guid>
-      <description>What's shipped, what's cooking, and why I'd rather show real progress than polished fiction.</description>
-      <pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
-    </item>
-
-    <item>
-      <title>I Rebuilt My Portfolio From Scratch — Here's Everything That Broke</title>
-      <link>https://agene-okoh.vercel.app/blog/building-my-portfolio</link>
-      <guid>https://agene-okoh.vercel.app/blog/building-my-portfolio</guid>
-      <description>Single page to full ecosystem. Every step, every mistake, every fix.</description>
-      <pubDate>Sat, 12 Sep 2026 12:00:00 GMT</pubDate>
-    </item>
-
-    <item>
-      <title>My First Paying Client — Building LeadClear Journal's Landing Page</title>
-      <link>https://agene-okoh.vercel.app/blog/leadclear-client-story</link>
-      <guid>https://agene-okoh.vercel.app/blog/leadclear-client-story</guid>
-      <description>The brief, the build, and why the business outcome mattered more than the code.</description>
-      <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-    </item>
-
     <item>
       <title>How I Built DevCraft Career</title>
       <link>https://agene-okoh.vercel.app/blog/building-devcraft-career</link>
       <guid>https://agene-okoh.vercel.app/blog/building-devcraft-career</guid>
-      <description>A CV builder that scans the internet for jobs and sends users the apply link.</description>
-      <pubDate>Thu, 10 Sep 2026 12:00:00 GMT</pubDate>
+      <description>How I built DevCraft Career — a CV builder that scans the internet for matching jobs and sends users the apply link.</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
     </item>
-
     <item>
-      <title>Building NativityGuard — Architecture of a Civic-Tech Platform</title>
+      <title>The Honest State of My Work</title>
+      <link>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</link>
+      <guid>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</guid>
+      <description>An honest look at what&apos;s shipped, what&apos;s in progress, and why I&apos;d rather show real progress than polished fiction.</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>I Rebuilt My Portfolio From Scratch</title>
+      <link>https://agene-okoh.vercel.app/blog/building-my-portfolio</link>
+      <guid>https://agene-okoh.vercel.app/blog/building-my-portfolio</guid>
+      <description>How I rebuilt my portfolio from a single page into a multi-page ecosystem — every step, every mistake, every fix.</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>My First Paying Client — Building LeadClear Journal&apos;s Landing Page</title>
+      <link>https://agene-okoh.vercel.app/blog/leadclear-client-story</link>
+      <guid>https://agene-okoh.vercel.app/blog/leadclear-client-story</guid>
+      <description>How I built LeadClear Journal&apos;s landing page for a paying client — the brief, the build, and the business outcome.</description>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Building NativityGuard</title>
       <link>https://agene-okoh.vercel.app/blog/building-nativityguard</link>
       <guid>https://agene-okoh.vercel.app/blog/building-nativityguard</guid>
-      <description>How I designed a full case-lifecycle system with Go, React, and PostgreSQL.</description>
-      <pubDate>Wed, 09 Sep 2026 12:00:00 GMT</pubDate>
+      <description>How I designed the architecture of NativityGuard — a Go + React civic-tech platform for rural Nigerian security workflows.</description>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
     </item>
-
     <item>
       <title>Why I Reach for Go for Real Backends</title>
       <link>https://agene-okoh.vercel.app/blog/why-go-for-backends</link>
       <guid>https://agene-okoh.vercel.app/blog/why-go-for-backends</guid>
-      <description>Python is faster to prototype. Go is faster in production. Here's how I decide.</description>
-      <pubDate>Tue, 08 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Why I reach for Go for real backends — a practical decision framework between Go and Python.</description>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
     </item>
-
     <item>
-      <title>AI for Agriculture — What Actually Works in the Field</title>
+      <title>AI for Agriculture</title>
       <link>https://agene-okoh.vercel.app/blog/ai-for-agriculture</link>
       <guid>https://agene-okoh.vercel.app/blog/ai-for-agriculture</guid>
-      <description>Notes from building Plant Assistant for small-scale farmers.</description>
-      <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Lessons from building Plant Assistant — AI for small-scale farmers, and why the ML model is the easy part.</description>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
     </item>
-
   </channel>
 </rss>

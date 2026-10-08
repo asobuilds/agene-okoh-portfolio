@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: asobuilds/agene-okoh-portfolio
+  branch: main
+  base_url: https://agene-okoh.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "select", options: ["Essay", "Engineering", "Build Log", "Client Work", "Research"] }
+      - { label: "Description", name: "description", widget: "text", pattern: ['.{20,160}', "Between 20 and 160 characters"] }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Author", name: "author", widget: "string", default: "Agene S. Okoh" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+
+publish_mode: editorial_workflow

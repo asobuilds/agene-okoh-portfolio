@@ -13,12 +13,13 @@
   <url><loc>https://agene-okoh.vercel.app/services</loc><priority>0.9</priority></url>
   <url><loc>https://agene-okoh.vercel.app/process</loc><priority>0.7</priority></url>
   <url><loc>https://agene-okoh.vercel.app/blog</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/contact</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/map-and-territory</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/building-devcraft-career</loc><priority>0.9</priority></url>
   <url><loc>https://agene-okoh.vercel.app/blog/honest-state-of-my-work</loc><priority>0.9</priority></url>
   <url><loc>https://agene-okoh.vercel.app/blog/building-my-portfolio</loc><priority>0.9</priority></url>
   <url><loc>https://agene-okoh.vercel.app/blog/leadclear-client-story</loc><priority>0.9</priority></url>
-  <url><loc>https://agene-okoh.vercel.app/blog/building-devcraft-career</loc><priority>0.8</priority></url>
-  <url><loc>https://agene-okoh.vercel.app/blog/building-nativityguard</loc><priority>0.8</priority></url>
-  <url><loc>https://agene-okoh.vercel.app/blog/why-go-for-backends</loc><priority>0.8</priority></url>
-  <url><loc>https://agene-okoh.vercel.app/blog/ai-for-agriculture</loc><priority>0.8</priority></url>
-  <url><loc>https://agene-okoh.vercel.app/contact</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/building-nativityguard</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/why-go-for-backends</loc><priority>0.9</priority></url>
+  <url><loc>https://agene-okoh.vercel.app/blog/ai-for-agriculture</loc><priority>0.9</priority></url>
 </urlset>
